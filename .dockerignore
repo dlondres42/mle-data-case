@@ -1,0 +1,11 @@
+.git
+.github
+.venv
+.venv-wsl
+__pycache__
+*.py[oc]
+tests
+docs
+README.md
+Makefile
+.claude
