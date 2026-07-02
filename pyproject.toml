@@ -1,0 +1,26 @@
+[project]
+name = "mle-data-case"
+version = "0.1.0"
+description = "API that extracts structured incident data from free text using a local LLM"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["fastapi[standard]", "httpx"]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # import sorting
+    "UP", # pyupgrade
+    "B",  # bugbear
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not e2e'"
+markers = [
+    "e2e: end-to-end tests that require the API and Ollama running (make test-e2e)",
+]
