@@ -18,14 +18,24 @@ O enunciado completo do desafio está em [docs/case.md](docs/case.md).
 
 ### Opção A — Docker Compose (recomendado)
 
-Requisito: Docker.
+Requisito: Docker Desktop em execução.
 
 ```bash
+make run-full
+# ou diretamente:
 docker compose up --build
 ```
 
 Sobe o Ollama, baixa o modelo (`llama3.2:3b`, ~2 GB, apenas na primeira vez)
 e inicia a API em `http://localhost:8000`.
+
+Quando os logs mostrarem `Application startup complete`, a API está pronta.
+
+```bash
+curl -X POST http://localhost:8000/extract \
+  -H "Content-Type: application/json" \
+  -d '{"texto": "Ontem às 14h, no escritório de São Paulo, houve uma falha no servidor principal que afetou o sistema de faturamento por 2 horas."}'
+```
 
 ### Opção B — Local
 

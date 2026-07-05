@@ -1,10 +1,13 @@
-.PHONY: install run test test-e2e lint format
+.PHONY: install run run-full test test-e2e lint format
 
 install:
 	uv sync
 
 run:
 	uv run fastapi dev app/main.py
+
+run-full:
+	docker compose up --build
 
 test:
 	uv run pytest
