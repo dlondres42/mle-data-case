@@ -10,5 +10,8 @@ wheels/
 .venv
 .venv-wsl/
 
+# Editor
+.vscode/
+
 # Claude Code local settings
 .claude/settings.local.json
